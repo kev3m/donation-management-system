@@ -16,8 +16,9 @@ print("Uma nova doação será registrada")
 #     classificacaoDoDoador = int(input("Digite a classificação da pessoa doadora:\n[Para pessoa Física digite 0]\n[Para pessoa Jurídica digite 1]: "))
 
 
-itemExtra = 0
+
 cestaCriada = 0
+itemExtra = 0
 
 #Contadores
 quantiaAcucar = 0
@@ -97,15 +98,21 @@ while novaDoacao == "S":
 # elif classificacaoDoDoador == 1:
 #     quantiaItensDoadorJuridico = quantiaItensDoadorJuridico + acucar + arroz + cafe + extrato + macarrao + bolacha + oleo + farinhaDeTrigo + feijao + sal
 
+
+
 if novaDoacao == "N":
     print("Acabou")
 
 print(f"A quantidade de itens doados por doadores físicos foi: {quantiaItensDoadorFisico}")
 print(f"A quantidade de itens doados por doadores jurídicos foi: {quantiaItensDoadorJuridico}")
 
-print(quantiaAcucar)
-print(quantiaSal)
-print(cestaCriada)
+if itemExtra > cestaCriada:
+    print(f"{cestaCriada} cestas receberam itens extras, ou seja, todas.")
+elif itemExtra < cestaCriada:
+    print(f"{itemExtra} cestas receberam itens extras")
+    print(f"{cestaCriada - itemExtra } cestas não receberam itens extras")
+
+print(f"{cestaCriada} cestas foram formadas")
 
 
 
