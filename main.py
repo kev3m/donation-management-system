@@ -91,7 +91,6 @@ while novaDoacao == "S":
         quantiaFeijao = quantiaFeijao - 4
         quantiaSal = quantiaSal - 1
 
-
 #Contador de Itens Para Pessoas Fisicas e Juridicas
 # if classificacaoDoDoador == 0:
 #     quantiaItensDoadorFisico = quantiaItensDoadorFisico + acucar + arroz + cafe + extrato + macarrao + bolacha + oleo + farinhaDeTrigo + feijao + sal
