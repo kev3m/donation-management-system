@@ -32,11 +32,24 @@ quantiaFtrigo = 0
 quantiaFeijao = 0
 quantiaSal = 0
 
+#Contadores totais
+totalAcucar = 0
+totalArroz = 0 
+totalCafe = 0
+totalExtrato = 0
+totalMacarrao = 0
+totalBolacha = 0
+totalOleo = 0
+totalFtrigo = 0
+totalFeijao = 0
+totalSal = 0
+
 quantiaItensDoadorFisico = 0
 quantiaItensDoadorJuridico = 0
 
 
 while novaDoacao == "S":
+    
 
     nomeDoDoador = input("Digite o nome do doador: ")
     classificacaoDoDoador = int(input("Digite a classificação da pessoa doadora:\n[Para pessoa Física digite 0]\n[Para pessoa Jurídica digite 1]: "))
@@ -78,6 +91,16 @@ while novaDoacao == "S":
         quantiaFeijao += feijao
         quantiaSal += sal
         itemExtra += extra
+        totalAcucar += acucar
+        totalArroz += arroz 
+        totalCafe += cafe
+        totalExtrato += extrato
+        totalMacarrao += macarrao
+        totalBolacha += bolacha
+        totalOleo += oleo
+        totalFtrigo += farinhaDeTrigo
+        totalFeijao += feijao
+        totalSal += sal
     #Criar a cesta
     while quantiaAcucar >= 1 and quantiaArroz >= 4 and quantiaCafe >= 2 and quantiaExtrato >= 2 and quantiaMacarrao >= 3 and quantiaBolacha >= 1 and quantiaOleo >= 1 and quantiaFtrigo >= 1 and quantiaFeijao >= 4 and quantiaSal >= 1:
         cestaCriada += 1 
@@ -103,6 +126,7 @@ while novaDoacao == "S":
 if novaDoacao == "N":
     print("Acabou")
 
+print(f"Foram recebidas {totalAcucar + totalArroz + totalCafe + totalExtrato + totalMacarrao + totalBolacha + totalOleo + totalFtrigo + totalFeijao + totalSal} doações")
 print(f"A quantidade de itens doados por doadores físicos foi: {quantiaItensDoadorFisico}")
 print(f"A quantidade de itens doados por doadores jurídicos foi: {quantiaItensDoadorJuridico}")
 
@@ -114,7 +138,28 @@ elif itemExtra < cestaCriada:
 
 print(f"{cestaCriada} cestas foram formadas")
 
-
+    
+if quantiaAcucar > 0:
+    print(f"Sobrou açucar")
+if quantiaArroz > 0:
+    print(f"Sobrou arroz")
+if quantiaCafe > 0:
+    print(f"Sobrou café")
+if quantiaExtrato > 0:
+    print(f"Sobrou extrato")
+if quantiaMacarrao > 0:
+    print(f"Sobrou macarrão")
+if quantiaBolacha > 0:
+    print(f"Sobrou bolacha")
+if quantiaOleo > 0:
+    print(f"Sobrou óleo")
+if quantiaFtrigo > 0:
+    print(f"Sobrou farinha de trigo")
+if quantiaFeijao > 0:
+    print(f"Sobrou feijão")
+if quantiaSal > 0:
+    print(f"Sobrou sal")
+    
 
 # if acucar == 1:
 #     cestaCriada += 1
