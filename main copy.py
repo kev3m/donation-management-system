@@ -1,7 +1,6 @@
-from tabulate import tabulate
 
-
-
+novaDoacao = "S"
+print("Uma nova doação será registrada")
 
 cestaCriada = 0
 itemExtra = 0
@@ -33,9 +32,6 @@ totalSal = 0
 quantiaItensDoadorFisico = 0
 quantiaItensDoadorJuridico = 0
 
-novaDoacao = "S"
-print("Uma nova doação será registrada")
-
 while novaDoacao == "S":
     
     nomeDoDoador = input("Digite o nome do doador: ")
@@ -47,6 +43,7 @@ while novaDoacao == "S":
     while classificacaoDoDoador < 0 or classificacaoDoDoador > 1:
         print("Tipo inválido de doador")
         classificacaoDoDoador = int(input("Digite a classificação da pessoa doadora:\n[Para pessoa Física digite 0]\n[Para pessoa Jurídica digite 1]: "))
+    
     acucar = float(input("Quantos quilogramas(kg) de açúcar foram doados? ")) #1 kg
     arroz = float(input("Quantos quilogramas(kg) de arroz foram doados? ")) #4 kg
     cafe = float(input("Quantos quilogramas(kg) de café foram doados? ")) #2 kg
@@ -58,8 +55,8 @@ while novaDoacao == "S":
     feijao = float(input("Quantos quilogramas(kg) de feijão foram doados? ")) #4 kg
     sal = float(input("Quantos quilogramas(kg) de sal foram doados? ")) #1 kg
     extra = int(input("Quantos itens(outros) extras foram doados? "))
-    novaDoacao = input("Deseja adicionar uma nova doação? (S/N)")
-    novaDoacao.upper()
+    novaDoacao = input("Deseja adicionar uma nova doação? (S/N)").upper()[0]
+    
 
     #Contador de Itens Para Pessoas Fisicas e Juridicas
     if classificacaoDoDoador == 0:
@@ -104,17 +101,14 @@ while novaDoacao == "S":
         quantiaFeijao = quantiaFeijao - 4
         quantiaSal = quantiaSal - 1
 
-
 if novaDoacao == "N":
     print("Acabou")
 
-print(f"Foram recebidas {totalAcucar + totalArroz + totalCafe + totalExtrato + totalMacarrao + totalBolacha + totalOleo + totalFtrigo + totalFeijao + totalSal} doações de pessoas físicas e jurídicas")
+print(f"Foram recebidas {totalAcucar + totalArroz + totalCafe + totalExtrato + totalMacarrao + totalBolacha + totalOleo + totalFtrigo + totalFeijao + totalSal} doações")
 print(f"A quantidade de itens doados por doadores físicos foi: {quantiaItensDoadorFisico}")
 print(f"A quantidade de itens doados por doadores jurídicos foi: {quantiaItensDoadorJuridico}")
 
-if cestaCriada == 0:
-        print('Nenhuma cesta foi criada, portanto itens extras não foram adicionados')
-if itemExtra > cestaCriada and cestaCriada > 0:
+if itemExtra > cestaCriada:
     print(f"{cestaCriada} cestas receberam itens extras, ou seja, todas.")
 elif itemExtra < cestaCriada:
     print(f"{itemExtra} cestas receberam itens extras")
@@ -123,23 +117,6 @@ elif itemExtra < cestaCriada:
 print(f"{cestaCriada} cestas foram formadas")
 
     
-# sobras = [
-#     [quantiaAcucar, "Açucar"]] 
-#     # quantiaArroz, 
-#     # quantiaCafe, 
-#     # quantiaExtrato, 
-#     # quantiaMacarrao, 
-#     # quantiaOleo, 
-#     # quantiaFtrigo, 
-#     # quantiaFeijao, 
-#     # quantiaSal]
-
-# for i in sobras:
-#     if i > 0:
-#         print(tabulate(sobras, headers=["Sobrou", "Quantia"]))
-
-        
-
 if quantiaAcucar > 0:
     print(f"Sobrou açucar")
 if quantiaArroz > 0:
@@ -161,15 +138,5 @@ if quantiaFeijao > 0:
 if quantiaSal > 0:
     print(f"Sobrou sal")
     
-
-# if acucar == 1:
-#     cestaCriada += 1
-# print(cestaCriada)
-
-# def addItemExtra(extra):
-#     if extra > 0:
-#         itemExtra += 1
-
-
 
 
